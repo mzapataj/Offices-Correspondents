@@ -1,0 +1,101 @@
+﻿@model Prueba.WebSites.ViewModel.CorresponsalesOficinasVM
+
+@{
+    ViewData["Title"] = "Corresponsales Oficinas";
+    var lol =ViewBag.CorresponsalOficinas;
+    var molol = Model;
+}
+
+<h1>Prueba</h1>
+<hr/>
+<div class="row">
+   <div class="col-md-6">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <b><label asp-for="SelectedCorresponsalOficinas" class="control-label"></label>:</b>
+            <select asp-for="SelectedCorresponsalOficinas" class ="form-control"></select>
+        </div>
+
+        <div class="form-group">
+            <h4>
+                Resultado
+            </h4>
+            <hr />
+            <dl >
+                <dt><b>Corresponsal: </b></dt> <dd id="corresponsal"></dd>
+                <dt><b>Nombre oficina con más letras: </b></dt> <dd id="oficina-max-len"></dd>
+            </dl>
+        </div>       
+   </div>  
+
+   <div class="col-md-6">
+       <h4>
+            Lista de caracteres (<b id="oficina-max-len"></b>)
+       </h4>
+       <table class="table table-striped">
+           <thead>
+               <tr>
+                   <th>Carácter</th>
+                   <th>Veces</th>
+               </tr>
+           </thead>
+           <tbody id="lista-caracteres">
+           </tbody>
+       </table>
+   </div>
+</div>
+
+<div>
+    <a asp-action="Index"><i class="fa-solid fa-arrow-left"></i> Regresar al inicio</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+<script async>
+
+    let selectCorresponsal = document.querySelector("#SelectedCorresponsalOficinas");    
+
+    let dataResult;
+    async function Startup()
+    {                
+        let result = await fetch(`@ViewBag.Path/GetCorresponsalesCountOficinas`);
+        let data = await result.json();
+
+        return data;
+    }
+    let promise = Startup();
+
+    function setResult()
+    {
+        let selectCorresponsalOficina = dataResult.find(elem => elem.corCorresponsalId == selectCorresponsal.value);                    
+        document.querySelector("#corresponsal").innerHTML = selectCorresponsalOficina.corNombre;        
+        for(let item of document.querySelectorAll("#oficina-max-len"))
+        {
+            item.innerHTML = selectCorresponsalOficina.ofiNameMaxLen;
+        }
+        RenderizarListaCaracteres("lista-caracteres", selectCorresponsalOficina.ofiNameMaxLen);        
+    }
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        promise.then(
+            function(dataJson) {
+                dataResult = dataJson;
+                for(let elem of dataJson)
+                {
+                    let option = document.createElement("option");
+                    option.text = `${elem.corNombre} - ${elem.totalOficinas}`;
+                    option.value = elem.corCorresponsalId;
+                    selectCorresponsal.appendChild(option);
+                }
+                setResult();
+                selectCorresponsal.addEventListener("change", function(e) {                    
+                    setResult();
+                });
+            }
+        );
+    });
+
+</script>

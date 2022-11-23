@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Common.Models.Oficina>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Oficinas</h1>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create" role="button"><i class="fa-solid fa-plus"></i> Crear</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.OfiId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OfiNombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OfiCorresponsalId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OfiCorresponsal.CorNombre)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfiId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfiNombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfiCorresponsalId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OfiCorresponsal.CorNombre)
+            </td>
+            <td>
+                <a class="btn btn-secondary btn-sm circle" role="button" asp-action="Edit" asp-route-id="@item.OfiId"><i class="fa-solid fa-pen-to-square"></i></a>  
+                <a class="btn btn-primary btn-sm circle" role="button" asp-action="Details" asp-route-id="@item.OfiId"><i class="fa-solid fa-circle-info"></i></a>  
+                <a class="btn btn-danger btn-sm circle" role="button" asp-action="Delete" asp-route-id="@item.OfiId"><i class="fa-solid fa-trash"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

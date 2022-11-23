@@ -1,0 +1,36 @@
+﻿@model Common.Models.Oficina
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Crear</h1>
+
+<h4>Oficina</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <b><label asp-for="OfiCorresponsal.CorNombre" class="control-label"></label>:</b>
+                <select asp-for="OfiCorresponsalId" class ="form-control" asp-items="ViewBag.OfiCorresponsalId"></select>
+            </div>
+            <div class="form-group">                
+                <input placeholder="Escriba el nombre..." asp-for="OfiNombre" class="form-control" />
+                <span asp-validation-for="OfiNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index"><i class="fa-solid fa-arrow-left"></i> Regresar a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

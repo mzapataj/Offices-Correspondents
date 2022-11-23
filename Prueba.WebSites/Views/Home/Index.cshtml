@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido</h1>
+
+    <div class="row mt-5">
+       <div class="col-md-4">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Corresponsales</h4>
+          </div>
+          <div class="card-body" style="background-image: url('images/Corresponsales.jpg')">
+            <img src="images/Corresponsales.jpg"/>
+             <a role="button" class="w-100 btn btn-lg btn-primary" asp-controller="Corresponsales" asp-action="Index">Ir al listado</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Oficinas</h4>
+          </div>
+          <div class="card-body" style="background-image: url('images/Oficinas.jpg')">
+            <img src="images/Oficinas.jpg"/>
+            <a role="button" class="w-100 btn btn-lg btn-primary" asp-controller="Oficinas" asp-action="Index">Ir al listado</a>            
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-white bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Prueba</h4>
+          </div>
+          <div class="card-body" style="background-image: url('images/Prueba.jpg')">
+            <img src="images/Prueba.jpg" width="80%"/>
+                <a role="button" class="w-100 btn btn-lg btn-primary" asp-controller="Home" asp-action="CorresponsalesCountOficinas">Ir a la prueba</a>            
+          </div>
+        </div>
+      </div>
+    </div>    
+</div>

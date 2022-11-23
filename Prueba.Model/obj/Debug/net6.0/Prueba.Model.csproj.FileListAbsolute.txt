@@ -1,0 +1,12 @@
+C:\Users\jo-ge\source\repos\Prueba_ControlBox\Prueba.Model\bin\Debug\net6.0\Prueba.Model.deps.json
+C:\Users\jo-ge\source\repos\Prueba_ControlBox\Prueba.Model\bin\Debug\net6.0\Prueba.Model.dll
+C:\Users\jo-ge\source\repos\Prueba_ControlBox\Prueba.Model\bin\Debug\net6.0\Prueba.Model.pdb
+C:\Users\jo-ge\source\repos\Prueba_ControlBox\Prueba.Model\obj\Debug\net6.0\Prueba.Model.csproj.AssemblyReference.cache
+C:\Users\jo-ge\source\repos\Prueba_ControlBox\Prueba.Model\obj\Debug\net6.0\Prueba.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jo-ge\source\repos\Prueba_ControlBox\Prueba.Model\obj\Debug\net6.0\Prueba.Model.AssemblyInfoInputs.cache
+C:\Users\jo-ge\source\repos\Prueba_ControlBox\Prueba.Model\obj\Debug\net6.0\Prueba.Model.AssemblyInfo.cs
+C:\Users\jo-ge\source\repos\Prueba_ControlBox\Prueba.Model\obj\Debug\net6.0\Prueba.Model.csproj.CoreCompileInputs.cache
+C:\Users\jo-ge\source\repos\Prueba_ControlBox\Prueba.Model\obj\Debug\net6.0\Prueba.Model.dll
+C:\Users\jo-ge\source\repos\Prueba_ControlBox\Prueba.Model\obj\Debug\net6.0\refint\Prueba.Model.dll
+C:\Users\jo-ge\source\repos\Prueba_ControlBox\Prueba.Model\obj\Debug\net6.0\Prueba.Model.pdb
+C:\Users\jo-ge\source\repos\Prueba_ControlBox\Prueba.Model\obj\Debug\net6.0\ref\Prueba.Model.dll

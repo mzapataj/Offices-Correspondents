@@ -1,0 +1,34 @@
+﻿@model Common.Models.Oficina
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar Oficina</h1>
+
+<h3>¿Estás seguro de que desea borrar esto?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OfiNombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OfiNombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OfiCorresponsal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OfiCorresponsal.CorCorresponsalId)
+        </dd>
+    </dl>
+    
+    <form asp-action="DeleteConfirm">
+        <input type="hidden" asp-for="OfiId" />        
+        <input type="submit" value="Borrar" class="btn btn-danger" />
+        <br />
+        <br />
+        <a asp-action="Index"><i class="fa-solid fa-arrow-left"></i> Regresar a la lista</a>
+    </form>
+</div>
