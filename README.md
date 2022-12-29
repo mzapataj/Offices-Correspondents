@@ -23,7 +23,7 @@ This has a front-end built with Razor and Bootstrap 5 with three modules:
 * **Oficinas:** List with Office entities and CRUD operations
 ![image](https://user-images.githubusercontent.com/16918921/203469419-f81c120b-d41f-4bfd-9bf6-ccc569d76003.png)
 
-* **Prueba:** Has a special functionality with consists in:
+* **Prueba:** Has a special functionality which consists in:
 
 1. The Dropdown List has Correspondent name (COR_NOMBRE) followed by a offices count which is related with each Correspondent.
 2. In right side, it has a list according selected option in Dropdown list with each character counts.
